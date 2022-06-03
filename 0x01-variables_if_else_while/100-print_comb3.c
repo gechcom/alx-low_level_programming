@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  *
- * Description: print all possible dif combination 2digit
+ * Description: print all possible dif combination of  2 digits 
  *
  * Return: Always 0 (Success)
  */
@@ -22,7 +22,7 @@ while (digit1 <= 9)
 		{
 		putchar(digit1 + 48);
 		putchar(digit2 + 48);
-		
+
 		if (digit1 + digit2 != 17)
 		{
 			putchar(',');
