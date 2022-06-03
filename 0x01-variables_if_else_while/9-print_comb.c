@@ -17,7 +17,7 @@ while (number <= 9)
 	if (number != 9)
 	{
 		putchar(',');
-	        putchar('\t');
+		putchar(' ');
 	}
 	++number;
 }
