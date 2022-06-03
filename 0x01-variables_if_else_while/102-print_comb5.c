@@ -21,12 +21,12 @@ while (digit1 <= 99)
 		if (digit1 != digit2 )
 		{
 		putchar((digit1 / 10 ) + 48);
-		putchar((digitt % 10) + 48);
+		putchar((digit1 % 10) + 48);
 		putchar(' ');
 		putchar((digit2 / 10) + 48);
-		putchar((digit2 % 10) + 48
+		putchar((digit2 % 10) + 48);
 
-		if (digiT != 98 || digit2 !=99)
+		if (digit1 != 98 || digit2 !=99)
 		{
 			putchar(',');
 			putchar(' ');
