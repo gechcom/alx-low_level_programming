@@ -13,7 +13,7 @@ int numbers = 0;
 
 while (numbers <= 9)
 {
-	prinf("%i", numbers);
+	printf("%i", numbers);
 	++numbers;
 }
 putchar('\n');
