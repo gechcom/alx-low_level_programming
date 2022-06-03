@@ -8,27 +8,31 @@
  */
 
 int main(void)
-{
-int number = 0, number2;
-while (number <= 9)
-{
-	number2 = 0;
-	while (number2 <= 9)
-	{
-			if (number != number2 && number < number2)
-			{
-				putchar(number + 48);
-				putchar(number2 + 48);
+int digit1 = 0, digit2;
 
-				if (number + number2 != 17)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
-		++number2;
+while (digit1 <= 9)
+{
+digit2 = 0;
+
+	while (digit2 <= 9)
+
+	{
+		if (digit1 != digit2 && digit1 < digit2)
+		{
+		putchar(digit1 + 48);
+		putchar(digit2 + 48);
+		
+		if (digit1 + digit2 != 17)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		}
+	++digit2;
+
 	}
-	++number;
+
+++digit1;
 }
 putchar('\n');
 
