@@ -16,10 +16,10 @@ while (number <= 9)
 	number2 = 0;
 	while (number2 <= 9)
 		{
-if (number != number2 && number < number2)
+			if (number != number2 && number < number2)
 			{
 				putchar(number + 48);
-				::putchar(number2 + 48);
+				putchar(number2 + 48);
 
 				if (number + number2 != 17)
 				{
