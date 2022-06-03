@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  *
- * Description: print the the alphabet
+ * Description: print the the print numbers using put hcar function
  *
  * Return: Always 0 (Success)
  */
@@ -13,7 +13,7 @@ int number = 0;
 
 while (number <= 9)
 {
-putchar(number + '');
+putchar(number + '0');
 ++number;
 }
 
