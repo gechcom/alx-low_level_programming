@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  *
- * Description: print all possible dif combination of  2 digits 
+ * Description: print all possible dif combination of  2 digits
  *
  * Return: Always 0 (Success)
  */
