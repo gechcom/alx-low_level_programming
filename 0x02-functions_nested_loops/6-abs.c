@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _abs: compute absolute valueof int
+ * _abs - compute absolute valueof int
  *
  * @n: takesint data taye
  *
