@@ -5,11 +5,11 @@
  */
 int print_last_digit(int n)
 {
-	int l;
+	int ld;
 
 	if (n < 0)
-		l = -1 * (n % 10);
+		ld = -1 * (n % 10);
 	else
-		l = n % 10;
-	return (n);
+		ld = n % 10;
+	return (ld);
 }
