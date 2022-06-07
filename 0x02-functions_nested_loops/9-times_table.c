@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * times_tbale - print the 9 times 
+ * times_tbale - print the 9 times
  */
 
 void times_table(void)
@@ -22,16 +22,13 @@ void times_table(void)
 			 *put space for single number
 			 palce first digit for two numbers
 			 *
-			 * */
-			
+			 */
 			if (r <= 9)
 				_putchar(' ');
 			else
 				_putchar((r / 10) + 48);
-			
 			_putchar((r % 10) + 48);
 		}
-		
 		_putchar('\n');
 	}
 }
