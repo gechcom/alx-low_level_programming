@@ -6,7 +6,8 @@
  * @n: takes number input
  *
  * Return: ld
- * */
+ */
+
 int print_last_digit(int n)
 {
 	int ld;
