@@ -11,9 +11,9 @@ void times_table(void)
 	for (x = 0; x <= 9; ++x)
 	{
 		_putchar(48);
-		for (y = 1; min <= 9; ++y)
+		for (y = 1; y <= 9; ++y)
 		{
-			_putchar((',');
+			_putchar(',');
 			_putchar(' ');
 
 			r = x * y;
@@ -25,9 +25,9 @@ void times_table(void)
 			 * */
 			
 			if (r <= 9)
-			_putchar(' ');
+				_putchar(' ');
 			else
-			_putchar((r / 10) + 48);
+				_putchar((r / 10) + 48);
 			
 			_putchar((r % 10) + 48);
 		}
