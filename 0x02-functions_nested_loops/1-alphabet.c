@@ -3,12 +3,12 @@
 /**
  * main- Entry point
  *
- * Description: print alphabet
+ * print_alphabet - use putchar to print a to z alphabet
  *
  * Return: Always 0.
  */
 
-void print_alphabet(void) /*this will print alphabet a to z */
+void print_alphabet(void)
 {
 	int c;
 
