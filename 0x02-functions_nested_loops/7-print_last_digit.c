@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_lasy_digit - print th elast digit num
+ * print_last_digit - print th elast digit num
  *
  * @n: takes number input
  *
