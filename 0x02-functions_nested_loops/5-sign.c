@@ -2,7 +2,7 @@
 
 /**
  * print_sign - print +, 0, -
- * 
+ *
  * @n: takes interger
  *
  * Return: 1,  0 and -1
@@ -23,6 +23,6 @@ int print_sign(int n)
 	else
 	{
 		putchar(45 + 0);
-		return(-1);
+		return (-1);
 	}
 }
