@@ -1,7 +1,6 @@
 #include"main.h"
 
 /**
- *
  * print_alphabet - use putchar to print a to z alphabet
  *
  */
