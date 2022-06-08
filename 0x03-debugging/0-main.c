@@ -1,8 +1,7 @@
 #include"main.h"
 /**
- * positive_or_negative - Print postive or negative
- * @n: inpput
- *
+ * main - entry point
+ * Return: 0
  */
 
 int  main(void)

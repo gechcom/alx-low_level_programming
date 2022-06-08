@@ -1,5 +1,5 @@
 /**
- * main -test function that prints if integer is posetive or negative
+ * main - test function that prints if integer is posetive or negative
  * Return: 0
  */
 
