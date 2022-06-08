@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * main - entry point
+ * numLength - entry point
  *
- *@numLength: operand number
+ *@num: operand number
  *
  *Return: number of digits
  */
