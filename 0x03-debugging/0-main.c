@@ -5,15 +5,13 @@
  *
  */
 
-void  positive_or_negative(int n)
+int  main(void)
 {
-	if(n > 0)
-		printf("%d is positive", n);
-	else if(n == 0)
-		printf("%d is zero", n);
-	else
-		printf("%d is negative", n);
+	int i;
 
+	i = 98 % 2;
+	positive_or_negative(i);
 
+	return (0);
 }
 
