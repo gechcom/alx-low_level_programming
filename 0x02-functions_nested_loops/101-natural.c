@@ -5,7 +5,7 @@
  *
  *Descpription: cum of all the multiplie of 3  0r 5 below 1024
  *
- *Return: Always 0 
+ *Return: Always 0
  */
 int main(void)
 {
