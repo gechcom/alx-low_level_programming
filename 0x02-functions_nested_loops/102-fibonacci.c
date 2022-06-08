@@ -10,21 +10,22 @@
 int main(void)
 {
 	unsigned long fib1 = 0, fib2 = 1, sum;
-	float total_sum;
+	int count;
 
-	while (1)
+
+	for (count = 0; count < 50; ++count)
 	{
 		sum = fib1 + fib2;
+		printf("%lu", sum);
 
-		if (sum > 4000000)
-			break;
-		if ((sum % 2) == 0)
-			total_sum += sum;
 		fib1 = fib2;
 		fib2 = sum;
-	}
 
-	printf("%.0f\n", total_sum);
+		if (count == 49)
+			printf("\n");
+		else
+			printf(", ");
+	}
 
 	return (0);
 
