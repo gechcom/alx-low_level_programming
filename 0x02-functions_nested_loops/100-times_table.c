@@ -35,14 +35,12 @@ void print_times_table(int n)
 				_putchar((r / 100) + 48);
 				_putchar((r / 10) % 10 + 48);
 			}
-			else if (r <= 99 && prod >= 10)
-			{
+			else if (r <= 99 && r >= 10)
 				_putchar((r / 10) + 48);
-			_putchar((r % 10) + 48);
 
-			}
+			_putchar((r % 10) + 48);
+		}
 			_putchar('\n');
 		}
-
 	}
 }
