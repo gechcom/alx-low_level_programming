@@ -7,4 +7,5 @@
  * Return: value
  */
 
+void print_square(int size){
 
