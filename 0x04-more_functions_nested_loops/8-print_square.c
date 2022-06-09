@@ -1,29 +1,10 @@
-#include "main.h"
-
+#incldue "main.h"
 /**
- * print_square - a function that prints a square
+ * print_square - print square
  *
- * @size: size of square
+ * @size: input
  *
- * Return: Alwyas 0
+ * Return: value
  */
 
-void print_square(int size)
-{
-	int c, r;
 
-	if (size <= 0)
-		_putchar('\n');
-	else
-	{
-		for (c = 1; c <= size; ++c)
-		{
-			_putchar('#');
-			for (r = 2; r <= size; ++r)
-			{
-				putchar('#');
-			}
-			_putchar('\n');
-		}
-	}
-}
