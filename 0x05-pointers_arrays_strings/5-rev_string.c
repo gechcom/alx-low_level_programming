@@ -12,10 +12,10 @@ void rev_string(char *s)
 	int l, i;
 	char ch;
 
-	l = 0;
+	i = 0;
 
 	/*length of the string*/
-	while (l != '\0')
+	while (s[l] != '\0')
 		l++;
 
 	/* swap the string*/
