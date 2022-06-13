@@ -19,11 +19,11 @@ void rev_string(char *s)
 		l++;
 
 	/* swap the string*/
-	for (i = 0; i < l/2; ++l)
+	for (i = 0; i < l / 2; ++l)
 	{
 		ch = s[i];
 		s[i] = s[l - 1 - i]; /* we deduct 1 since the array is always begin with 0*/
-		s[l - 1 -i] = ch;
+		s[l - 1 - i] = ch;
 	}
 
 
