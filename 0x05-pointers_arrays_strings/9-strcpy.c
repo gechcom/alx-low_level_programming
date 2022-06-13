@@ -4,7 +4,7 @@
  * _strcpy - copy one ponted values to theother
  * @dest: parameter one
  * @src: parameter two
- * Return : the string copied
+ * Return: the string copied
  */
 
 char *_strcpy(char *dest, char *src)
