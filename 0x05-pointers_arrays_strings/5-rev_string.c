@@ -9,21 +9,26 @@
 
 void rev_string(char *s)
 {
-	int l, i;
-	char ch;
-
-	l = 0;
+	int l, i, = 0;
+	int temp;
+	int e;
 
 	/*length of the string*/
 	while (s[l] != '\0')
 		l++;
 
+	e = length - 1;
+	length /= 2;
 	/* swap the string*/
-	for (i = 0; i < l / 2; ++l)
+
+
+	while (l--)
 	{
-		ch = s[i];
-		s[i] = s[l - 1 - i]; /* we deduct 1 since the array is always begin with 0*/
-		s[l - 1 - i] = ch;
+		temp = s[i];
+		s[i] = s[e]; /* we deduct 1 since the array is always begin with 0*/
+		s[e] = temp;
+		i++;
+		e--;
 	}
 
 
