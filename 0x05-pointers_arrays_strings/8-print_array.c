@@ -3,7 +3,7 @@
 /**
  * print_array - function to print aray
  * @a: paramter a string
- * @i: string parameter two
+ * @n: string parameter two
  * Return: noting
  */
 
