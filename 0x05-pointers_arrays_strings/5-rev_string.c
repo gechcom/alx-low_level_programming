@@ -9,7 +9,7 @@
 
 void rev_string(char *s)
 {
-	int l, i, = 0;
+	int l, i = 0;
 	int temp;
 	int e;
 
@@ -17,8 +17,8 @@ void rev_string(char *s)
 	while (s[l] != '\0')
 		l++;
 
-	e = length - 1;
-	length /= 2;
+	e = l - 1;
+	l /= 2;
 	/* swap the string*/
 
 
