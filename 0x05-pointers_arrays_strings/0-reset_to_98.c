@@ -3,7 +3,7 @@
 
 /**
  * reset_to_98 - reset the ponter valueto 98
- * @*n: pointer parameter
+ * @n: int  parameter
  * Return: void
  */
 
