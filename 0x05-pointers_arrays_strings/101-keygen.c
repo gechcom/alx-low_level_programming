@@ -1,4 +1,8 @@
-#include <stdio>
+#include <stdio.h>
+#include <stlib.h>
+#include <time.h>
+
+
 /**
  * main - main entry
  *
@@ -8,7 +12,6 @@
 
 int main(void)
 {
-
 
 }
 
