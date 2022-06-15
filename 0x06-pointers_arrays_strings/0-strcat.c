@@ -1,26 +1,23 @@
 #include "main.h"
-#include <stdlib.h>
-#include <string.h>
 
 /**
- * _strcat - this function overwriting the terminating null byute (\0) at the end of the dest
- * @dest:string parameter
- * @src: another string parameter
- * Return: returning a pointer to the resulting string dest
+ * _strcat - function that concatenates two strings.
+ * @dest: pointer to destination input
+ * @src: pointer to source input
+ * Return: pointer to resulting concatinate
  */
 
-char *_strcat(char *dest, char *src);
+char *_strcat(char *dest, char *src)
 {
-	int i, j;
+	int c, c2;
 
-	i = 0;
+	c = 0;
 
-	while (dest[i])
-		i++;
+	while (dest[c])
+		c++;
 
-	for (j = 0; src[j] != '\0'; j++)
-		dest[i++] = src[j];
-
+	for (c2 = 0; src[c2] ; c2++)
+		dest[c++] = src[c2];
 
 	return (dest);
 }
