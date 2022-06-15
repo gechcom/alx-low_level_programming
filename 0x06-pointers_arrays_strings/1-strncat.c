@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
-#include <string.h>
 
 /**
  * _strncat - same as strcat  exceptit will us at most n bytes from src
