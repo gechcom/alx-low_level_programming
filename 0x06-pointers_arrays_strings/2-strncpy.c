@@ -5,6 +5,7 @@
  * @dest: pointer to destination
  * @src: pointer to source
  * @n: byte of source pointer
+ * Return: dest copied string
  */
 
 char *_strncpy(char *dest, char *src, int n)
