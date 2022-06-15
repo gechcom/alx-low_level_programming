@@ -18,9 +18,11 @@ char *leet(char *s)
 	{
 		for (j = 0; j < 5; j++)
 		{
-			if (s[i] == s1[j] || s[i] == u1[j]
-			s[i] = n[j];
-			break;
+			if (s[i] == s1[j] || s[i] == u1[j])
+			{
+				s[i] = n[j];
+				break;
+			}
 		}
 	}
 
