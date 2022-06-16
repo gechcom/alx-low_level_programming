@@ -13,27 +13,25 @@
 
 char *rot13(char *s)
 {
-	if (s != NULL)
+	if(s != NULL)
 	{
-		char* current_char = s;
+		char *current_char = s;
 
-
-		while ( *current_char != '\0')
+		while(*current_char != '\0')
 		{
-			if ((*current_char >= 97 && *current_char <= 122) || (*current_char >= 65 && *current_char <= 90))
+			if((current_char >= 97 && *current_char <= 122) || (*current_char >= 65 && *current_char <= 90))
 			{
-				if (*current_char > 109 || (*current_char > 77 && *current_char < 91))
-				{
+				if(*current_char > 109 || (*current_char > 77 && *current_char < 91))
 					*current_char -= 13;
-				}
-				else
-				{
+
+				else 
 					*current_char += 13;
-				}
 			}
 
-		current_char++;
+			current_char++;
+
 		}
 	}
+
 	return (s);
 }
