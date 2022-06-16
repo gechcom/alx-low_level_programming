@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
  * rot13 - a function encoding using ro13 which is a function takes a string and returns the string ciphered with
@@ -17,22 +20,22 @@ char *rot13(char *s)
 
 	char *sr = malloc(strlen(s));
 
-	if (sr !+ NULL)
+	if (sr != NULL)
 	{
 		strcpy(sr, s);
 		char *current_char = sr;
 
-		while ( *current_char !+ '\0')
+		while ( current_char !+ '\0')
 		{
-			if ((*current_char >= 97 && *current_char <= 122) || (*current_char >= 65 && *current_char <= 90))
+			if ((current_char >= 97 && current_char <= 122) || (current_char >= 65 && current_char <= 90))
 			{
-				if (*current_char > 109 || (*current_char > 77 && *current_char < 91))
+				if (current_char > 109 || (current_char > 77 && current_char < 91))
 				{
-					*current_char -= 13;
+					current_char -= 13;
 				}
 				else
 				{
-					*current_char += 13;
+					current_char += 13;
 				}
 			}
 
