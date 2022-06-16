@@ -8,25 +8,22 @@
 
 char *rot13(char *s)
 {
-	char *ch = s;
+	char half1[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
+	char half2[] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
 
-	while (*ch != '\0')
+	int i = 0, j;
+
+	while (s[i] != 0)
 	{
-		if ((*ch >= 97 && *ch <= 122) || (*ch >= 65 && *ch <= 90))
+		char c = s[i];
+		for (j = 0; j < 52; j++)
 		{
-			if ((*ch > 109 && *ch < 123) || (*ch > 77 && *ch < 91))
-			{
-				*ch -= 13;
-			}
-			else
-			{
-				*ch += 13;
-			}
+			if (c == half1[j])
+				s[i] = half2[j];
 		}
-		ch++;
 
+		i++;
 	}
-	
+
 	return (s);
 }
-
