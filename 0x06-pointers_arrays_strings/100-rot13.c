@@ -8,6 +8,8 @@
 
 char *rot13(char *s)
 {
+	if (*s != NULL)
+	{
 	char *ch = s;
 
 	while (*ch != '\0')
@@ -25,6 +27,7 @@ char *rot13(char *s)
 		}
 		ch++;
 
+	}
 	}
 	return (s);
 }
