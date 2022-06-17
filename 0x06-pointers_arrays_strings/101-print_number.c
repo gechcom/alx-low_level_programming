@@ -7,18 +7,21 @@
 
 void print_number(int n)
 {
+	int i, p;
+
 	if (n < 0)
-	{
 		_putchar('-');
-		if (n < -9)
-			print_number(n / -10);
-		_putchar('0' - n % 10);
-	}
-	else
+	for (p = 0, i = 1000000000; i > 0; i /= 10)
 	{
-		if (n > 9)
-			print_number(n / 10);
-		_putchar(n % 10 + '0');
+		int d = (n / i) % 10;
+
+		d = d < 0 ? -d : d;
+		if (d || p || i == 1)
+		{
+			_putchar(d + '0');
+			p++;
+		}
+
 	}
 }
 
