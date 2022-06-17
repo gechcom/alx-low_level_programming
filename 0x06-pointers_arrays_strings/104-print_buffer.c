@@ -1,10 +1,11 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_buffer - print buffer function
  * @b: string char input
  * @size: size of the string
- * 
+ * Return: nothing
  */
 
 void print_buffer(char *b, int size)
