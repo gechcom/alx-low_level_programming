@@ -1,5 +1,8 @@
 #include "main.h"
 
+#define ROT13IN  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+#define ROT13OUT "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"
+
 /**
  * rot13 - function encode using rot 13
  * @s: string input
@@ -8,22 +11,17 @@
 
 char *rot13(char *s)
 {
-	char half1[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
-	char half2[] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
+	char *ret = s, *rot13in = ROT13IN, *rot13out = ROT13OUT;
+	int i = 0;
 
-	int i = 0, j;
-
-	while (s[i] != 0)
+	for (; *s; s++)
 	{
-		char c = s[i];
-		for (j = 0; j < 52; j++)
-		{
-			if (c == half1[j])
-				s[i] = half2[j];
-		}
-
-		i++;
+		for (i = 0; rot13in[i]; i++)
+			if (*s == rot13in[i])
+			{
+				*s = rot13out[i];
+				break;
+			}
 	}
-
-	return (s);
+	return (ret);
 }
