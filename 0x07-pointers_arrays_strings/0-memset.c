@@ -8,10 +8,10 @@
  * Return: function files the first n bytes of the memory area pointed by s with the onstant byte b
  */
 
-char *_memset(char *s, char b, unsigned int n);
+char *_memset(char *s, char b, unsigned int n)
 {
   /* the unsigned int is always zero */
-unsigned int i;
+	unsigned int i;
 
 	for (i = 0; i < n; i++)
 		s[i] = b;
