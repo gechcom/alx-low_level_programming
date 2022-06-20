@@ -5,7 +5,7 @@
  * @s: array of s
  * @b: string b input
  * @n: integer input
- * Return: function files the first n bytes of 
+ * Return: function files the first n bytes of
  * the memory area pointed by s with the onstant byte b
  */
 
