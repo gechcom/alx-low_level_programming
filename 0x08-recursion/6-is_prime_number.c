@@ -14,8 +14,9 @@ int _is_prime_wraper(int f, int p)
 	else if (f > p / 2)
 		return (1);
 	else
-		return (prime_check(f + 1, p));
+		return (_is_prime_wraper(f + 1, p));
 }
+
 /**
  * is_prime_number - check if the input number is prime number
  * @n: Number
