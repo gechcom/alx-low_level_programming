@@ -26,7 +26,7 @@ int _strlen(char *s)
 int _palindrome_check(char *s, int l, int r)
 {
 	if (s == NULL || l < 0 || r < 0)
-		return (1)
+		return (1);
 	if (l >= r)
 		return (1);
 	return (_palindrome_check(s, l + 1, r - 1));
