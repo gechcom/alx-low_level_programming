@@ -18,7 +18,7 @@ int _sqrt_recursion_wrapper(int i, int j)
 		return (i);
 	else if (sqr_num > j)
 		return (-1);
-	return (_sqrt_recursion_wrapper(i + 1, c));
+	return (_sqrt_recursion_wrapper(i + 1, j));
 
 }
 /**
