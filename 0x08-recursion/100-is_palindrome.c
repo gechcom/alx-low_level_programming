@@ -18,9 +18,9 @@ int _strlen(char *s)
  * _palindrome_check - check palindrome of a string
  * a palindrome is when orignal and reverse string is the same
  * @s: string
- * @l: length 
- * c1: check one
- * c2: check two
+ * @l: length
+ * @c1: check one
+ * @c2: check two
  * Return: 1 is a palindrom o if not
  */
 
@@ -44,10 +44,10 @@ int _palindrome_check(char *s, int l, int c1, int c2)
 int is_palindrome(char *s)
 {
 	int len;
-	
+
 	if (s[0] == '\0')
 		return (1);
-	
+
 	len = _strlen(s);
 
 	return (_palindrome_check(s, len, 0, len - 1));
