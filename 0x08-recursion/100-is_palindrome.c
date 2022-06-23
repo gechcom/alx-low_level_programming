@@ -32,7 +32,7 @@ int _palindrome_check(char *s, int l, int c1, int c2)
 	if (s[c1] != s[c2])
 		return (0);
 	else
-		return (check_palindrome(s, l, c1 + 1, c2 - 1));
+		return (_palindrome_check(s, l, c1 + 1, c2 - 1));
 }
 
 /**
