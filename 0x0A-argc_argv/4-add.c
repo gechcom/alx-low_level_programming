@@ -1,6 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
+
+/**
+ * is_positive - check if a number contains only digits
+ * @num: The string to chekc
+ * Return: 1 if posetive and 0 if not
+ */
+
+int is_positive(char *num)
+{
+	int i, l = strlen(num);
+
+	for (i = 0; i < l; i++)
+	{
+		if (!isdigit(num[i]))
+			return (1);
+	}
+
+	return (0);
+}
+
+
 
 /**
  * main - add posetive numbers
@@ -11,44 +33,33 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
-	unsigned int sum = 0;
-
-	for (i = 1; i < argc; i++)
+	int i, sum = 0;
+	
+	if (argc == 1)
 	{
-		if (is_positive(argv[i]))
-		{
-			sum += atoi(argv[i]);
+		printf("0\n");
+	}
+	else
+	{
 
-		}
-		else
+		for (i = 1; i < argc; i++)
 		{
-			printf("Error\n");
-			return (1);
+			if (is_positive(argv[i]) == 0)
+			{
+				sum += atoi(argv[i]);
+
+			}
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
 	}
 
-	printf("%u\n", sum);
+	printf("%d\n", sum);
 
 	return (0);
 }
 
-/**
- * is_positive - check if a number contains only digits
- * @num: The string to chekc
- * Return: 1 if posetive and 0 if not
- */
-
-int is_positive(char *num)
-{
-	int i;
-
-	for (i = 0; num[i] != '\0'; i++)
-	{
-		if (!isdigit(num[i]))
-			return (0);
-	}
-
-	return (1);
-}
 
