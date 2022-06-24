@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		if (is_positive(argv[i]))
 		{
 			sum += atoi(argv[i]);
-			printf("%d\n", sum);
+
 		}
 		else
 		{
@@ -27,6 +27,9 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 	}
+
+	printf("%u\n", sum);
+
 	return (0);
 }
 
