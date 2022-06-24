@@ -4,48 +4,12 @@
 #include <stdbool.h>
 
 /**
- * main - that prints the minimum number of coins to
- * make change for an amount of money
- * @argc: num of command lines
- * @argv: command arguments
- * Return: o always sucess
- */
-
-int main(int argc, char *argv[])
-{
-	int cents;
-
-	if (argc != 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
-
-	cents = atoi(argv[1]);
-	if (cents <= 0)
-	{
-		printf("0\n");
-		return (0);
-	}
-
-	if (!is_positive(argv[1]))
-	{
-		printf("Error\n");
-		return (1);
-	}
-	printf("%d\n", num_of_coins(cents));
-
-	return (0);
-
-}
-
-/**
- * is_positive - check if a string contains only digits
+ * is_positive_num - check if a string contains only digits
  * @num: the strinig check
  * Return: true if digit or false otherwise
  */
 
-bool is_positive(char *num)
+bool is_positive_num(char *num)
 {
 	int i;
 
@@ -84,4 +48,40 @@ int num_of_coins(int cents)
 	coins += cents;
 
 	return (coins);
+}
+
+/**
+ * main - that prints the minimum number of coins to
+ * make change for an amount of money
+ * @argc: num of command lines
+ * @argv: command arguments
+ * Return: o always sucess
+ */
+
+int main(int argc, char *argv[])
+{
+	int cents;
+
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+	cents = atoi(argv[1]);
+	if (cents <= 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+
+	if (!is_positive_num(argv[1]))
+	{
+		printf("Error\n");
+		return (1);
+	}
+	printf("%d\n", num_of_coins(cents));
+
+	return (0);
+
 }
