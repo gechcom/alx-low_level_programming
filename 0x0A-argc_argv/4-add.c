@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdbool.h>
 
 /**
  * is_positive - check if a number contains only digits
@@ -9,17 +10,17 @@
  * Return: 1 if posetive and 0 if not
  */
 
-int is_positive(char *num)
+bool is_positive(char *num)
 {
 	int i, l = strlen(num);
 
 	for (i = 0; i < l; i++)
 	{
 		if (!isdigit(num[i]))
-			return (0);
+			return (false);
 	}
 
-	return (1);
+	return (true);
 }
 
 
@@ -35,12 +36,6 @@ int main(int argc, char *argv[])
 {
 	int i, sum = 0;
 
-	if (argc == 1)
-	{
-		printf("0\n");
-	}
-	else
-	{
 
 		for (i = 1; i < argc; i++)
 		{
@@ -55,7 +50,7 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 		}
-	}
+	
 
 	printf("%d\n", sum);
 
