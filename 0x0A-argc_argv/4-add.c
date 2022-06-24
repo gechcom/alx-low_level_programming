@@ -16,10 +16,10 @@ int is_positive(char *num)
 	for (i = 0; i < l; i++)
 	{
 		if (!isdigit(num[i]))
-			return (1);
+			return (0);
 	}
 
-	return (0);
+	return (1);
 }
 
 
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 
 		for (i = 1; i < argc; i++)
 		{
-			if (is_positive(argv[i]) == 0)
+			if (is_positive(argv[i]))
 			{
 				sum += atoi(argv[i]);
 
