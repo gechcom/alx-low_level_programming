@@ -34,7 +34,7 @@ int is_positive(char *num)
 int main(int argc, char *argv[])
 {
 	int i, sum = 0;
-	
+
 	if (argc == 1)
 	{
 		printf("0\n");
