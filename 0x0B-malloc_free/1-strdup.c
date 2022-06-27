@@ -24,3 +24,18 @@ char *_strdup(char *str)
 
 	return (dup);
 }
+
+
+/**
+ * _strlen - stringlength
+ * @s: string
+ * Return: length
+ */
+
+int _strlen(char *s)
+{
+	if (s[0] != '\0')
+		return (1 + _strlen(s++));
+	else
+		return (0);
+}
