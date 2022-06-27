@@ -1,96 +1,95 @@
 #include "main.h"
 
-
-
-
 /**
- * wordcount - countngn word  form string
- * @str: string
- * Return: the number of string
+ * strtow - Split a string into words
+ * @str: The string to split
+ *
+ * Return: Pointer to newly allocated space containing an array of words,
+ * or NULL if failure
  */
-
-int wordcount(char *str)
+char **strtow(char *str)
 {
-	int words = 0;
+	int i = 0, j = 0, k = 0, wordcount = 0, strlength = 0, tmplength = 0;
+	char **words;
 
-	while (*str != '\0')
+	if (str == NULL || _strlen(str) == 0)
+		return (NULL);
+	strlength = _strlen(str);
+	wordcount = count_words(str);
+	if (wordcount == 0)
+		return (NULL);
+	words = malloc(sizeof(char *) * (wordcount + 1));
+	if (words == NULL)
+		return (NULL);
+	for (i = 0; i < strlength; i++)
 	{
-		if (*str == ' ')
-			str++;
-		else
+		if (str[i] != ' ')
 		{
-			while (*str != ' ' && *str != '\0')
-				str++;
-			words++;
+			for (k = i, tmplength = 0; str[k] != '\0' &&
+				     str[k] != ' '; k++)
+				tmplength++;
+			words[j] = malloc(sizeof(char) * (tmplength + 1));
+			if (words[j] == NULL)
+			{
+				free(words);
+				for (k = 0; k <= j; k++)
+					free(words[k]);
+				return (NULL);
+			}
+			k = 0;
+			while (str[i] != '\0' && str[i] != ' ')
+			{
+				words[j][k] = str[i];
+				i++;
+				k++;
+			}
+			words[j][k] = '\0';
+			j++;
 		}
 	}
+	words[j] = NULL;
 	return (words);
 }
 
-
 /**
- * free_array - free array
- * @ar: array to free
- * @i: array[i]
- * Return: Nothig
+ * count_words - Count the number of words in a string
+ * @str: The string
+ *
+ * Return: The number of words (any characters separated by spaces)
  */
-void free_array(char **ar, int i)
+int count_words(char *str)
 {
-	if (ar != NULL && i != 0)
+	int i;
+	int count = 0, word = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		while (i >= 0)
+		if (str[i] != ' ' && word == 0)
 		{
-			free(ar[i]);
-			i--;
+			count++;
+			word = 1;
 		}
-		free(ar);
+		else if (str[i] == ' ')
+		{
+			word = 0;
+		}
 	}
+
+	return (count);
 }
 
-
 /**
- * strtow - a funciton that splits a string into words
- * @str: a string
- * Return: words
+ * _strlen - Return the length of a string
+ * @s: The string to check
+ *
+ * Return: The length of the string
  */
-
-char **strtow(char *str)
+int _strlen(char *s)
 {
-	int i, s, j, str_l, word;
-	char **string;
+	int i;
 
-	if (str == NULL || *str == '\0')
-		return (NULL);
+	for (i = 0; s[i] != '\0'; i++)
+		;
 
-	str_l = wordcount(str);
-
-	string = malloc((str_l + 1) * sizeof(char *));
-	if (str_l == 0 || string == NULL)
-		return (NULL);
-
-	for (i = s = 0; i < str_l; i++)
-	{
-		for (word = s; str[word] != '\0'; word++)
-		{
-			if (str[word] == ' ')
-				s++;
-			if (str[word] != ' ' && (str[word + 1] == ' ' || str[word + 1] == '\0'))
-			{
-				string[i] = malloc((word - s + 2) * sizeof(char));
-				if (string[i] == NULL)
-				{
-					free_array(string, i);
-					return (NULL);
-				}
-				break;
-			}
-		}
-
-		for (j = 0; s <= word; s++, j++)
-			string[i][j] = str[s];
-		string[i][j] = '\0';
-
-	}
-	string[i][j] = '\0';
-	return (string);
+	return (i);
 }
