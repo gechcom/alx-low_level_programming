@@ -1,6 +1,48 @@
 #include "main.h"
 
 /**
+ * count_words - Count the number of words in a string
+ * @str: The string
+ *
+ * Return: The number of words (any characters separated by spaces)
+ */
+int count_words(char *str)
+{
+	int i;
+	int count = 0, word = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] != ' ' && word == 0)
+		{
+			count++;
+			word = 1;
+		}
+		else if (str[i] == ' ')
+		{
+			word = 0;
+		}
+	}
+
+	return (count);
+}
+
+/**
+ * _strlen - Return the length of a string
+ * @s: The string to check
+ *
+ * Return: The length of the string
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		;
+
+	return (i);
+}
+/**
  * strtow - Split a string into words
  * @str: The string to split
  *
@@ -51,45 +93,4 @@ char **strtow(char *str)
 	return (words);
 }
 
-/**
- * count_words - Count the number of words in a string
- * @str: The string
- *
- * Return: The number of words (any characters separated by spaces)
- */
-int count_words(char *str)
-{
-	int i;
-	int count = 0, word = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] != ' ' && word == 0)
-		{
-			count++;
-			word = 1;
-		}
-		else if (str[i] == ' ')
-		{
-			word = 0;
-		}
-	}
-
-	return (count);
-}
-
-/**
- * _strlen - Return the length of a string
- * @s: The string to check
- *
- * Return: The length of the string
- */
-int _strlen(char *s)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-		;
-
-	return (i);
-}
