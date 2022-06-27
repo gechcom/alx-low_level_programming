@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * free_grdi - free allocated space for two dimensional array
+ * free_grid - free allocated space for two dimensional array
  * @grid: double pointer
  * @height: h
  * Return: NOthing
