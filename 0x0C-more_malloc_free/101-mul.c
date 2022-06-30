@@ -66,21 +66,7 @@ void error(int status)
 	exit(status);
 }
 
-/**
- * _strlen - Return the length of a string
- * @s: The string to check
- *
- * Return: The length of the string
- */
-int _strlen(char *s)
-{
-	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
-		;
-
-	return (i);
-}
 
 /**
  * _calloc - Allocate memory for an array
@@ -104,23 +90,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	return (p);
 }
 
-/**
- * _memset - Fill n bytes of memory with a constant byte
- * @s: The memory area to fill
- * @b: The constant byte
- * @n: The number of bytes to fill
- *
- * Return: Pointer to the memory area s
- */
-char *_memset(char *s, char b, unsigned int n)
-{
-	unsigned int i;
 
-	for (i = 0; i < n; i++)
-		s[i] = b;
-
-	return (s);
-}
 
 /**
  * multiply - Multiply two numbers and print the result
