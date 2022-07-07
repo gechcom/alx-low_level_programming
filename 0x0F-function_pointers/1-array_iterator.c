@@ -1,4 +1,4 @@
-#include "main.h
+#include "main.h"
 
 /**
  * array_iterator - Execute a function on each element of an array
