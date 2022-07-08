@@ -1,54 +1,50 @@
-#include "main.h"
 #include <stdlib.h>
 
 /**
- * string_nconcat - Concatenate two strings
- * @s1: The first string
- * @s2: The second string
- * @n: The number of bytes from s2 to use
+ * string_nconcat - function that concatenates two strings
  *
- * Return: Pointer to the allocated memory containing new string
- */
+ * @s1: string 1
+ * @s2: string 2
+ * @n: bytes of @s2 to add to @s1 to be a new string
+ *
+ * Return: new string followed by the first @n bytes
+ *         of string 2 @s2 or NULL
+*/
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, size1, size2;
-	char *cat;
+	unsigned int l1, l2, i, j;
+	char *str;
 
+	/*treat NULL as empty string*/
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	size1 = _strlen(s1);
-	size2 = _strlen(s2);
-	if (n > size2)
-		n = size2;
+	l1 = l2 = 0;
+	/*length of both s1 & s2 respectively*/
+	while (s1[l1] != '\0')
+		l1++;
+	while (s2[l2] != '\0')
+		l2++;
+	/*set n to length of s2*/
+	if (n >= l2)
+		n = l2;
 
-	cat = malloc(sizeof(char) * (size1 + n + 1));
-	if (cat == NULL)
+	str = (char *) malloc((l1 + n + 1) * sizeof(char));
+	if (str == NULL)
 		return (NULL);
 
-	for (i = 0; i < size1; i++)
-		cat[i] = s1[i];
-	for (; i < size1 + n; i++)
-		cat[i] = s2[i - size1];
-	cat[size1 + n] = '\0';
-
-	return (cat);
-}
-
-/**
- * _strlen - Return the length of a string
- * @s: The string to check
- *
- * Return: The length of the string
- */
-int _strlen(char *s)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-		;
-
-	return (i);
+	/*add s1 to str*/
+	for (i = 0; s1[i] != '\0'; i++)
+		str[i] = s1[i];
+	/*add s2 n bytes to str*/
+	for (j = 0; j < n && s2[j] != '\0'; j++)
+	{
+		str[i] = s2[j];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
