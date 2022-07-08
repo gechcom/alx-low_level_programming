@@ -1,54 +1,48 @@
-#include "main.h"
+#include <stdlib.h>
 
 /**
- * _realloc - Reallocate a memory block
- * @ptr: Pointer to the memory previously allocated with malloc
- * @old_size: Size of the allocated space for ptr
- * @new_size: Size of the new memory block
+ * _realloc - reallocate a memory block using malloc and free
  *
- * Return: Pointer to the new memory block
- */
+ * @ptr: pointer to previous memory
+ * @old_size: old memory array size
+ * @new_size: new memory array size
+ *
+ * Return: pointer to new memory
+ *         NULL if it fails
+*/
+
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *new;
+	char *new_ptr, *temp_ptr;
+	unsigned int i;
 
 	if (new_size == old_size)
 		return (ptr);
+
+	if (ptr == NULL)
+	{
+		new_ptr = malloc(new_size);
+		if (new_ptr == NULL)
+			return (NULL);
+		free(ptr);
+		return (new_ptr);
+	}
+
 	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
 		return (NULL);
 	}
 
-	new = malloc(new_size);
-	if (new == NULL)
+	new_ptr = malloc(new_size);
+	if (new_ptr == NULL)
 		return (NULL);
-	if (ptr == NULL)
-		return (new);
 
-	if (new_size > old_size)
-		_memcpy(new, ptr, old_size);
-	else
-		_memcpy(new, ptr, new_size);
+	temp_ptr = ptr;
+
+	for (i = 0; i < old_size; i++)
+		new_ptr[i] = temp_ptr[i];
 
 	free(ptr);
-	return (new);
-}
-
-/**
- * _memcpy - Copy n bytes from memory area src to memory area dest
- * @dest: The destination to copy to
- * @src: The source to copy from
- * @n: The number of bytes to copy
- *
- * Return: Pointer to the destination
- */
-char *_memcpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int i;
-
-	for (i = 0; i < n; i++)
-		dest[i] = src[i];
-
-	return (dest);
+	return (new_ptr);
 }
