@@ -6,9 +6,9 @@
  * Return: unsigned int
  */
 
-unsigned int binary_to_unit(const char *b)
+unsigned int binary_to_uint(const char *b)
 {
-	unsigned int unit = 0, base = 1;
+	unsigned int uint = 0, base = 1;
 	int length, i;
 
 	if (!b)
@@ -23,11 +23,11 @@ unsigned int binary_to_unit(const char *b)
 	for (i = length - 1; i >= 0; i--)
 	{
 		if (b[i] == '1')
-			unit += base;
+			uint += base;
 		base *= 2;
 	}
 
-	return (unit);
+	return (uint);
 }
 
 /**
@@ -42,5 +42,6 @@ int _strlen(const char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 		;
+
 	return (i);
 }
