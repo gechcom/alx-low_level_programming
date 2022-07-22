@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * binary_to_unit - cover binary numb to unsigned int
+ * binary_to_uint - cover binary numb to unsigned int
  * @b: a string of 1 and 0
  * Return: unsigned int
  */
@@ -28,6 +28,7 @@ unsigned int binary_to_uint(const char *b)
 	}
 
 	return (uint);
+
 }
 
 /**
