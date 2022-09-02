@@ -3,32 +3,29 @@
 #include <stdlib.h>
 
 /**
- * main - generate a key dependingon a user for crackme5
+ * main - generate a key depending on a username for crackme5
  * @argc: number of arguments passed
  * @argv: arguments passed to main
- * Return: 0 or 1
+ *
+ * Return: 0 on success, 1 on error
  */
-
-
 int main(int argc, char *argv[])
 {
-	unsigned int i,b;
+	unsigned int i, b;
 	size_t len, add;
-	char *1 = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
-	char p[7] = "       ";
+	char *l = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+	char p[7] = "      ";
 
 	if (argc != 2)
 	{
 		printf("Correct usage: ./keygen5 username\n");
 		return (1);
-
 	}
-
 	len = strlen(argv[1]);
 	p[0] = l[(len ^ 59) & 63];
 	for (i = 0, add = 0; i < len; i++)
 		add += argv[1][i];
-	p[l] = l[(add ^ 79) & 63];
+	p[1] = l[(add ^ 79) & 63];
 	for (i = 0, b = 1; i < len; i++)
 		b *= argv[1][i];
 	p[2] = l[(b ^ 85) & 63];
